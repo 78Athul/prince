@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Epilogue:wght@300;400;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#0e1510",
+              "outline": "#8e928d",
+              "surface-variant": "#2f3731",
+              "tertiary-container": "#012024",
+              "on-tertiary-fixed-variant": "#2f4b4f",
+              "surface": "#0e1510",
+              "on-error": "#690005",
+              "on-background": "#dde5dc",
+              "on-secondary-fixed": "#241918",
+              "on-surface-variant": "#c4c7c2",
+              "error-container": "#93000a",
+              "tertiary-fixed": "#c9e8ed",
+              "on-primary-fixed-variant": "#3c4a47",
+              "surface-tint": "#bbcac6",
+              "secondary-container": "#524342",
+              "surface-container-low": "#161d18",
+              "surface-container-high": "#242c26",
+              "on-secondary": "#3a2d2c",
+              "outline-variant": "#444844",
+              "on-tertiary-container": "#6c898e",
+              "primary-container": "#121f1c",
+              "on-secondary-container": "#c4b1af",
+              "secondary": "#d6c2c0",
+              "error": "#ffb4ab",
+              "inverse-on-surface": "#2b322d",
+              "secondary-fixed-dim": "#d6c2c0",
+              "secondary-fixed": "#f3dedb",
+              "on-tertiary": "#183539",
+              "on-tertiary-fixed": "#001f23",
+              "primary-fixed-dim": "#bbcac6",
+              "on-primary-fixed": "#111e1c",
+              "on-primary": "#263330",
+              "background": "#0e1510",
+              "surface-container": "#1a211c",
+              "on-surface": "#dde5dc",
+              "on-secondary-fixed-variant": "#524342",
+              "tertiary": "#aeccd1",
+              "on-primary-container": "#798884",
+              "surface-container-lowest": "#09100b",
+              "inverse-primary": "#53615e",
+              "on-error-container": "#ffdad6",
+              "inverse-surface": "#dde5dc",
+              "surface-container-highest": "#2f3731",
+              "surface-bright": "#343b35",
+              "primary": "#bbcac6",
+              "tertiary-fixed-dim": "#aeccd1",
+              "primary-fixed": "#d7e6e2"
+            },
+            fontFamily: {
+              "headline": ["Epilogue"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"],
+              "display": ["Anton"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-outline {
+            -webkit-text-stroke: 1px #bbcac6;
+            color: transparent;
+        }
+        .glass-panel {
+            background: rgba(47, 55, 49, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full flex justify-between items-center px-6 md:px-12 py-8 z-50 bg-[#0e1510] shadow-[0_0_100px_rgba(221,229,220,0.05)]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#bbcac6] cursor-pointer hover:opacity-70 transition-opacity" data-icon="menu">menu</span>
+<span class="font-['Anton'] uppercase text-4xl tracking-tighter text-[#bbcac6]">GALLERY</span>
+</div>
+<nav class="hidden md:flex gap-10 items-center">
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-[0.1em] text-xs text-[#bbcac6] font-bold border-b border-[#bbcac6]/30 py-1 transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]" href="#">Prints</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-[0.1em] text-xs text-[#dde5dc]/60 font-medium hover:text-[#bbcac6] transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]" href="#">Collections</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-[0.1em] text-xs text-[#dde5dc]/60 font-medium hover:text-[#bbcac6] transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]" href="#">Exhibitions</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-[0.1em] text-xs text-[#dde5dc]/60 font-medium hover:text-[#bbcac6] transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]" href="#">About</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="font-['Plus_Jakarta_Sans'] uppercase tracking-[0.1em] text-xs text-[#bbcac6] flex items-center gap-2 hover:opacity-70 transition-opacity">
+<span>BAG</span>
+<span class="material-symbols-outlined text-lg" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</header>
+<main class="relative pt-32">
+<!-- Ambient Orbs -->
+<div class="fixed top-1/4 left-1/4 w-[500px] h-[500px] bg-tertiary rounded-full blur-[120px] opacity-[0.08] pointer-events-none -z-10"></div>
+<div class="fixed bottom-1/4 right-1/4 w-[600px] h-[600px] bg-primary rounded-full blur-[150px] opacity-[0.05] pointer-events-none -z-10"></div>
+<!-- Hero Section -->
+<section class="min-h-[751px] flex flex-col justify-center px-6 md:px-12 relative overflow-hidden mb-24">
+<div class="max-w-[1440px] mx-auto w-full relative z-10">
+<p class="font-label uppercase tracking-[0.3em] text-primary text-sm mb-6">Established 2024</p>
+<h1 class="font-display text-[12vw] md:text-[10vw] leading-[0.85] uppercase tracking-[-0.05em] mb-4">
+                    MUSEUM GRADE<br/>
+<span class="text-outline">PRINTS</span>
+</h1>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-12 mt-12">
+<p class="max-w-md text-on-surface-variant font-light text-lg leading-relaxed">
+                        Curated collection of high-fidelity architectural and landscape photography, printed on archival rag paper for lasting brilliance.
+                    </p>
+<button class="bg-primary text-on-primary font-label uppercase tracking-widest px-12 py-6 text-sm hover:bg-surface-tint transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-95 self-start md:self-auto">
+                        SHOP PRINTS
+                    </button>
+</div>
+</div>
+<!-- Large faint background number -->
+<span class="absolute -bottom-20 -right-20 font-display text-[30vw] text-primary opacity-[0.02] select-none pointer-events-none">01</span>
+</section>
+<!-- Featured Prints Store Grid -->
+<section class="px-6 md:px-12 mb-48 max-w-[1440px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-baseline mb-16 gap-4">
+<h2 class="font-headline text-5xl md:text-7xl font-light tracking-tight italic">FEATURED PRINTS</h2>
+<a class="font-label text-xs tracking-[0.2em] border-b border-outline-variant pb-1 hover:text-primary transition-colors" href="#">VIEW ALL SERIES</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24">
+<!-- Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container mb-8 relative">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" data-alt="minimalist architectural photography of a concrete staircase in soft morning light with sharp shadows" src="./assets/photos/WhatsApp Image 2026-03-30 at 10.14.15 AM (1).jpeg"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-2xl">Concrete Horizon</h3>
+<span class="font-label text-xs tracking-widest text-primary pt-2">LIMITED</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant mb-3">From $150</p>
+<p class="font-label text-[10px] tracking-[0.1em] text-outline uppercase">Unframed | Walnut | Matte Black</p>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer md:translate-y-24">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container mb-8 relative">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" data-alt="dramatic landscape photography of misty valley at sunrise with layered mountain silhouettes" src="./assets/photos/WhatsApp Image 2026-03-30 at 10.14.15 AM (2).jpeg"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-2xl">Valley Silence</h3>
+<span class="font-label text-xs tracking-widest text-primary pt-2">NEW</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant mb-3">From $150</p>
+<p class="font-label text-[10px] tracking-[0.1em] text-outline uppercase">Unframed | Walnut | Matte Black</p>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container mb-8 relative">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" data-alt="macro photography of ocean waves crashing on dark volcanic sand at sunset with golden highlights" src="./assets/photos/WhatsApp Image 2026-03-30 at 10.14.16 AM (1).jpeg"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-2xl">Arctic Tide</h3>
+<span class="font-label text-xs tracking-widest text-primary pt-2">SERIES 02</span>
+</div>
+<p class="font-body text-sm text-on-surface-variant mb-3">From $150</p>
+<p class="font-label text-[10px] tracking-[0.1em] text-outline uppercase">Unframed | Walnut | Matte Black</p>
+</div>
+</div>
+</section>
+<!-- Print of the Month: Asymmetric -->
+<section class="bg-surface-container-low py-32 mb-48 relative overflow-hidden">
+<div class="max-w-[1440px] mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+<div class="w-full lg:w-3/5 relative group">
+<div class="relative z-10 border-[16px] md:border-[32px] border-[#1a211c] shadow-2xl">
+<img alt="" class="w-full aspect-[4/3] object-cover" data-alt="minimal geometric architecture detail of a yellow building against a clear blue sky with sharp diagonal shadows" src="./assets/photos/WhatsApp Image 2026-03-30 at 10.14.16 AM.jpeg"/>
+</div>
+<!-- Decorative back element -->
+<div class="absolute -top-12 -left-12 w-full h-full bg-primary/5 -z-10 group-hover:-top-16 transition-all duration-700"></div>
+</div>
+<div class="w-full lg:w-2/5 flex flex-col items-start">
+<span class="font-label text-xs tracking-[0.3em] text-primary mb-4">LIMITED EDITION</span>
+<h2 class="font-display text-6xl md:text-8xl leading-none uppercase mb-8">THE YELLOW<br/>STUDIO</h2>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed mb-12">
+                        Our monthly curated selection features "The Yellow Studio" from the Urban Geometry series. Only 50 signed and numbered 24x36 prints available globally.
+                    </p>
+<div class="space-y-6 w-full">
+<div class="flex justify-between items-center border-b border-outline-variant pb-4">
+<span class="font-label uppercase tracking-widest text-xs">Dimensions</span>
+<span class="font-headline italic text-xl">24" x 36"</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant pb-4">
+<span class="font-label uppercase tracking-widest text-xs">Paper</span>
+<span class="font-headline italic text-xl">Hahnemühle Rag</span>
+</div>
+</div>
+<button class="w-full mt-12 bg-on-background text-background font-label uppercase tracking-widest py-6 text-sm hover:bg-primary transition-all active:scale-[0.98]">
+                        ADD TO CART — $450
+                    </button>
+</div>
+</div>
+</section>
+<!-- Print Quality Section -->
+<section class="px-6 md:px-12 mb-48 max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="flex flex-col gap-6">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="verified_user">verified_user</span>
+<h3 class="font-headline text-2xl font-bold">Archival Quality</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Engineered to last over 100 years without fading, using Pigment-based HDR inks.</p>
+</div>
+<div class="flex flex-col gap-6">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="font-headline text-2xl font-bold">Museum-Grade Rag Paper</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Heavyweight 310gsm cotton texture provides a luxurious, non-reflective finish.</p>
+</div>
+<div class="flex flex-col gap-6">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="frame_inspect">frame_inspect</span>
+<h3 class="font-headline text-2xl font-bold">Bespoke Framing</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Handcrafted frames in solid Walnut or Maple with anti-reflective gallery glass.</p>
+</div>
+<div class="flex flex-col gap-6">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="public">public</span>
+<h3 class="font-headline text-2xl font-bold">Global Shipping</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Secured in custom-built wooden crates and delivered carbon-neutrally worldwide.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#161d18] w-full flex flex-col items-center gap-16 px-8 py-24 relative overflow-hidden">
+<div class="max-w-[1440px] mx-auto text-center w-full relative z-10">
+<h2 class="font-['Anton'] uppercase text-7xl md:text-[14vw] text-[#bbcac6] leading-[0.8] mb-16 tracking-tighter opacity-10">GALLERY</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-24">
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-sm text-[#dde5dc]/50 hover:text-[#aeccd1] transition-colors duration-300" href="#">FINE ART PRINTS</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-sm text-[#dde5dc]/50 hover:text-[#aeccd1] transition-colors duration-300" href="#">COLLECTIONS</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-sm text-[#dde5dc]/50 hover:text-[#aeccd1] transition-colors duration-300" href="#">ABOUT</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-sm text-[#dde5dc]/50 hover:text-[#aeccd1] transition-colors duration-300" href="#">SHIPPING</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-sm text-[#dde5dc]/50 hover:text-[#aeccd1] transition-colors duration-300" href="#">RETURNS</a>
+<a class="font-['Plus_Jakarta_Sans'] uppercase tracking-widest text-sm text-[#dde5dc]/50 hover:text-[#aeccd1] transition-colors duration-300" href="#">FAQ</a>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 pt-12 border-t border-outline-variant/20">
+<span class="font-['Anton'] text-[#bbcac6] text-4xl">GALLERY</span>
+<p class="font-label text-xs tracking-widest text-[#dde5dc]/30">© 2024 GALLERY PRINT SHOP. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-6">
+<a class="text-[#bbcac6] hover:opacity-70 transition-opacity" href="#"><span class="material-symbols-outlined" data-icon="photo_camera">photo_camera</span></a>
+<a class="text-[#bbcac6] hover:opacity-70 transition-opacity" href="#"><span class="material-symbols-outlined" data-icon="alternate_email">alternate_email</span></a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
