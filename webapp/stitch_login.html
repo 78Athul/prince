@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery Studio - Access</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Epilogue:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#dde5dc",
+              "on-tertiary-container": "#4d554e",
+              "tertiary": "#dde5dc",
+              "surface-variant": "#2f3731",
+              "primary-fixed": "#d7e6e2",
+              "on-error-container": "#ffdad6",
+              "on-secondary-container": "#b6b9b4",
+              "primary-fixed-dim": "#bbcac6",
+              "on-error": "#690005",
+              "surface-container-low": "#161d18",
+              "secondary-fixed-dim": "#c4c7c2",
+              "secondary-fixed": "#e0e3de",
+              "on-secondary": "#2d312e",
+              "on-surface-variant": "#c2c8c5",
+              "background": "#0e1510",
+              "secondary": "#c4c7c2",
+              "on-surface": "#dde5dc",
+              "tertiary-fixed-dim": "#c1c9c0",
+              "surface-tint": "#bbcac6",
+              "on-tertiary": "#2b322c",
+              "on-primary-container": "#485552",
+              "primary-container": "#bbcac6",
+              "outline-variant": "#424846",
+              "on-primary-fixed": "#111e1c",
+              "on-primary": "#263330",
+              "on-secondary-fixed-variant": "#444844",
+              "primary": "#d7e6e2",
+              "tertiary-fixed": "#dde5dc",
+              "inverse-on-surface": "#2b322c",
+              "surface-container-high": "#242c26",
+              "on-tertiary-fixed-variant": "#414942",
+              "surface-container-highest": "#2f3731",
+              "on-primary-fixed-variant": "#3c4a47",
+              "surface": "#0e1510",
+              "error-container": "#93000a",
+              "error": "#ffb4ab",
+              "surface-container": "#1a211c",
+              "on-tertiary-fixed": "#161d18",
+              "outline": "#8c9290",
+              "inverse-primary": "#53615e",
+              "on-background": "#dde5dc",
+              "tertiary-container": "#c1c9c0",
+              "surface-container-lowest": "#09100b",
+              "surface-bright": "#343b35",
+              "secondary-container": "#464a46",
+              "surface-dim": "#0e1510",
+              "on-secondary-fixed": "#181d19"
+            },
+            fontFamily: {
+              "headline": ["Epilogue"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"],
+              "brand": ["Anton"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0e1510;
+            color: #dde5dc;
+            -webkit-font-smoothing: antialiased;
+        }
+        input:focus {
+            outline: none !important;
+            box-shadow: none !important;
+            border-color: #bbcac6 !important;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
+<main class="min-h-screen flex flex-col justify-between px-8 py-16 bg-surface">
+<div class="flex flex-col items-center mt-12">
+<h1 class="font-brand text-[4rem] leading-none tracking-tighter text-on-surface uppercase mb-2">
+                GALLERY
+            </h1>
+<p class="font-headline text-primary-fixed-dim tracking-[0.3em] text-sm uppercase">
+                ACCESS
+            </p>
+</div>
+<div class="flex-grow flex flex-col justify-center space-y-12">
+<div class="space-y-8">
+<div class="relative">
+<label class="block font-label text-[10px] tracking-[0.2em] text-on-tertiary-container mb-1 uppercase" for="email">
+                        EMAIL
+                    </label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 py-3 px-0 text-on-surface font-body font-light placeholder:text-on-surface-variant/20 transition-all duration-400 focus:border-primary-fixed-dim rounded-none" id="email" placeholder="curator@gallery.studio" type="email"/>
+</div>
+<div class="relative">
+<label class="block font-label text-[10px] tracking-[0.2em] text-on-tertiary-container mb-1 uppercase" for="password">
+                        PASSWORD
+                    </label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant/30 py-3 px-0 text-on-surface font-body font-light placeholder:text-on-surface-variant/20 transition-all duration-400 focus:border-primary-fixed-dim rounded-none" id="password" placeholder="••••••••" type="password"/>
+<div class="absolute right-0 bottom-3 text-on-surface-variant/40 cursor-pointer hover:text-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+</div>
+</div>
+<div class="flex justify-end">
+<a class="font-label text-[10px] tracking-widest text-primary-fixed-dim/60 hover:text-primary-fixed-dim transition-colors duration-400" href="#">
+                        FORGOT PASSWORD?
+                    </a>
+</div>
+</div>
+<div class="space-y-4 pt-4">
+<button class="w-full bg-primary-container text-on-primary font-label font-bold text-xs tracking-[0.2em] py-5 uppercase transition-all duration-400 hover:bg-primary active:scale-[0.98]">
+                    LOG IN
+                </button>
+<button class="w-full border border-outline-variant/20 text-primary font-label font-bold text-xs tracking-[0.2em] py-5 uppercase transition-all duration-400 hover:bg-surface-container-low active:scale-[0.98]">
+                    SIGN UP
+                </button>
+</div>
+</div>
+<div class="mt-16 text-center">
+<div class="flex items-center justify-center space-x-4 opacity-20 mb-8">
+<div class="h-[1px] w-8 bg-on-surface"></div>
+<span class="font-label text-[9px] tracking-[0.4em] uppercase">The Digital Curator</span>
+<div class="h-[1px] w-8 bg-on-surface"></div>
+</div>
+<p class="font-label text-[10px] text-on-surface-variant/40 tracking-wider">
+                © 2024 GALLERY STUDIO. ALL RIGHTS RESERVED.
+            </p>
+</div>
+</main>
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1] overflow-hidden">
+<div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-surface-container-high/20 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-5%] right-[-5%] w-[40%] h-[40%] bg-primary-fixed-dim/5 rounded-full blur-[100px]"></div>
+</div>
+</body></html>

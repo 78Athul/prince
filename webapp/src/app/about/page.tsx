@@ -91,9 +91,7 @@ export default function AboutPage() {
                 <span className="material-symbols-outlined text-4xl text-primary" data-icon="location_on">location_on</span>
                 <h3 className="font-label uppercase tracking-widest text-sm mt-4">Transparent Contact</h3>
                 <p className="text-on-surface-variant text-sm leading-relaxed">
-                  <strong>Studio Address:</strong> 124 Art District Blvd, New York, NY 10001<br/>
-                  <strong>Email:</strong> studio@galleryprintshop.com<br/>
-                  <strong>Phone:</strong> (555) 019-2834
+                  <strong>Email:</strong> sharon.augustin2@gmail.com
                 </p>
               </div>
             </div>
@@ -119,7 +117,7 @@ export default function AboutPage() {
           <h2 className="font-['Anton'] uppercase text-7xl md:text-[14vw] text-[#bbcac6] leading-[0.8] mb-16 tracking-tighter opacity-10">GALLERY</h2>
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 pt-12 border-t border-outline-variant/20">
             <span className="font-['Anton'] text-[#bbcac6] text-4xl">GALLERY</span>
-            <p className="font-label text-xs tracking-widest text-[#dde5dc]/30">© 2024 GALLERY PRINT SHOP. ALL RIGHTS RESERVED.</p>
+            <p className="font-label text-xs tracking-widest text-[#dde5dc]/30">© 2026 GALLERY PRINT SHOP. ALL RIGHTS RESERVED.</p>
           </div>
         </div>
       </footer>

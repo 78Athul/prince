@@ -2,6 +2,7 @@ import { createClient } from '@/utils/supabase/server'
 import NavBar from '@/components/NavBar'
 import AddToCartButton from '@/components/AddToCartButton'
 import Link from 'next/link'
+import { dummyPrints } from '@/lib/dummy-data'
 
 export default async function Home() {
   const supabase = await createClient()
@@ -10,13 +11,149 @@ export default async function Home() {
     .select('*')
     .order('created_at', { ascending: false })
 
+  const displayPrints = prints && prints.length > 0 ? prints : dummyPrints
+
   return (
     <>
       {/* Client-side NavBar with cart state */}
       <NavBar />
 
-      <main className="relative pt-32">
-        {/* Ambient Orbs */}
+      {/* MOBILE VIEW (Stitch) */}
+      <div className="md:hidden">
+        <main className="pt-4 pb-40 text-on-surface font-body bg-surface">
+          {/* Hero Section */}
+          <section className="relative min-h-[795px] flex flex-col justify-end bg-surface overflow-hidden">
+            <div className="absolute inset-0 z-0">
+              <img className="w-full h-full object-cover opacity-60 grayscale" alt="Cinematic gallery wall" src="/assets/photos/WhatsApp Image 2026-03-30 at 10.14.44 AM.jpeg"/>
+              <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"></div>
+            </div>
+            <div className="relative z-10 px-6 pb-12">
+              <div className="flex flex-col gap-0 leading-none">
+                <span className="text-primary-container font-body text-xs uppercase tracking-[0.4em] mb-4 font-light">The Curator's Selection</span>
+                <h2 className="text-[18vw] leading-[0.85] font-display text-primary-container uppercase tracking-tighter">MUSEUM</h2>
+                <h2 className="text-[18vw] leading-[0.85] font-display text-primary-container uppercase tracking-tighter">GRADE</h2>
+                <h2 className="text-[18vw] leading-[0.85] font-display text-primary-container uppercase tracking-tighter">PRINTS</h2>
+              </div>
+              <p className="mt-6 text-on-surface-variant max-w-[80%] font-light leading-relaxed text-sm font-body">
+                Limited edition archival pigment prints, curated for the modern architectural space.
+              </p>
+            </div>
+            <Link href="/gallery" className="relative z-10 w-full bg-primary text-on-primary py-8 flex border-0 items-center justify-center font-display text-2xl tracking-widest uppercase active:brightness-90 transition-all duration-300">
+              SHOP PRINTS
+            </Link>
+          </section>
+
+          {/* Featured Prints Section */}
+          <section className="mt-24 px-6">
+            <div className="flex justify-between items-end mb-12">
+              <div>
+                <span className="text-primary-container text-[10px] uppercase tracking-[0.3em] font-medium block mb-2">Portfolio</span>
+                <h3 className="font-headline text-4xl font-light text-on-surface">FEATURED PRINTS</h3>
+              </div>
+              <span className="material-symbols-outlined text-outline text-3xl">filter_list</span>
+            </div>
+
+            <div className="flex flex-col gap-20">
+              {displayPrints.slice(0, 3).map((print: any) => (
+                <div key={print.id} className="group">
+                  <div className="relative aspect-[4/5] overflow-hidden bg-surface-container-lowest">
+                    {print.is_limited_edition && (
+                      <div className="absolute top-4 left-4 z-20 bg-primary-container/90 backdrop-blur-md px-3 py-1">
+                        <span className="text-[9px] font-bold text-on-primary-container uppercase tracking-widest">Limited Edition</span>
+                      </div>
+                    )}
+                    <Link href={`/prints/${print.id}`}>
+                      <img className="w-full h-full object-cover grayscale-[0.2] transition-transform duration-700 group-hover:scale-110" alt={print.title} src={print.cloudinary_url}/>
+                    </Link>
+                  </div>
+                  <div className="mt-8 flex justify-between items-start">
+                    <div>
+                      <h4 className="font-headline text-2xl font-light text-on-surface uppercase tracking-tight">{print.title}</h4>
+                      <p className="font-body text-sm text-outline mt-1 font-light italic">Limited Series</p>
+                    </div>
+                    <span className="font-headline text-xl text-primary-container font-medium">${print.base_price}</span>
+                  </div>
+                  <AddToCartButton 
+                    item={{
+                      id: print.id,
+                      title: print.title,
+                      price: print.base_price,
+                      imageUrl: print.cloudinary_url,
+                      isLimited: print.is_limited_edition,
+                      frame: 'Unframed | Walnut | Matte Black'
+                    }}
+                    label="ADD TO CART" 
+                    className="w-full mt-6 py-4 border border-outline/20 text-on-surface font-body text-xs uppercase tracking-[0.2em] font-medium hover:bg-on-surface hover:text-surface transition-colors duration-300"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Print of the Month: Asymmetric (Mobile) */}
+          <section className="bg-surface-container-low py-16 px-6 mt-24 mb-16 relative overflow-hidden">
+            <div className="flex flex-col gap-8">
+              <div className="w-full relative group cursor-pointer">
+                <div className="relative z-10 border-[8px] border-[#1a211c] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+                  <img alt="The Yellow Studio" className="w-full aspect-[4/5] object-cover" src="/assets/photos/WhatsApp Image 2026-03-30 at 10.14.16 AM.jpeg"/>
+                </div>
+                <div className="absolute -top-4 -left-4 w-full h-full bg-primary/5 -z-10 transition-all duration-500 group-hover:-top-6 group-hover:-left-6"></div>
+              </div>
+              <div className="flex flex-col items-start mt-4">
+                <span className="font-label text-xs tracking-[0.3em] text-primary mb-3">LIMITED EDITION</span>
+                <h2 className="font-display text-5xl leading-none uppercase mb-6 text-on-surface">THE YELLOW<br/>STUDIO</h2>
+                <p className="font-body text-on-surface-variant text-sm leading-relaxed mb-8">
+                  Our monthly curated selection features &quot;The Yellow Studio&quot; from the Urban Geometry series. Only 50 signed and numbered 24x36 prints available globally.
+                </p>
+                <div className="space-y-4 w-full">
+                  <div className="flex justify-between items-center border-b border-outline-variant pb-3">
+                    <span className="font-label text-on-surface-variant uppercase tracking-widest text-[10px]">Dimensions</span>
+                    <span className="font-headline italic text-lg text-on-surface">24&quot; x 36&quot;</span>
+                  </div>
+                  <div className="flex justify-between items-center border-b border-outline-variant pb-3">
+                    <span className="font-label text-on-surface-variant uppercase tracking-widest text-[10px]">Paper</span>
+                    <span className="font-headline italic text-lg text-on-surface">Hahnemühle Rag</span>
+                  </div>
+                </div>
+                <div className="w-full mt-10">
+                  <Link
+                    href="/shop"
+                    className="w-full bg-on-background text-background font-label uppercase tracking-widest py-6 text-xs hover:bg-primary transition-colors duration-300 active:scale-[0.98] flex items-center justify-center"
+                  >
+                    VIEW IN SHOP
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Newsletter / Curator Quote */}
+          <section className="mt-32 px-6 py-24 bg-surface-container-low">
+            <div className="text-center">
+              <span className="material-symbols-outlined text-primary-container text-4xl mb-6">auto_awesome</span>
+              <p className="font-headline text-2xl font-light text-on-surface leading-relaxed italic mb-12">
+                "Photography is the architecture of light and shadow, frozen in a singular moment of truth."
+              </p>
+              <div className="h-px w-12 bg-outline/30 mx-auto mb-12"></div>
+              <h5 className="font-body text-[10px] uppercase tracking-[0.5em] text-outline">Get in Touch</h5>
+              <div className="mt-8">
+                <a
+                  href={`mailto:${process.env.NEXT_PUBLIC_PHOTOGRAPHER_EMAIL || 'sharon.augustin2@gmail.com'}`}
+                  className="text-primary-container text-xs font-bold uppercase tracking-[0.3em] hover:text-primary transition-colors"
+                >
+                  {process.env.NEXT_PUBLIC_PHOTOGRAPHER_EMAIL || 'sharon.augustin2@gmail.com'}
+                </a>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      {/* DESKTOP VIEW */}
+      <div className="hidden md:block">
+        <main className="relative pt-32">
+          {/* Ambient Orbs */}
+
         <div className="fixed top-1/4 left-1/4 w-[500px] h-[500px] bg-tertiary rounded-full blur-[120px] opacity-[0.08] pointer-events-none -z-10"></div>
         <div className="fixed bottom-1/4 right-1/4 w-[600px] h-[600px] bg-primary rounded-full blur-[150px] opacity-[0.05] pointer-events-none -z-10"></div>
 
@@ -47,7 +184,7 @@ export default async function Home() {
             <Link className="font-label text-xs tracking-[0.2em] border-b border-outline-variant pb-1 hover:text-primary transition-colors" href="/gallery">VIEW ALL SERIES</Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24">
-            {prints && prints.length > 0 ? prints.slice(0, 3).map((print: any, i: number) => (
+            {displayPrints.length > 0 ? displayPrints.slice(0, 3).map((print: any, i: number) => (
               <div key={print.id} className={`group ${i % 2 !== 0 ? 'md:translate-y-24' : ''}`}>
                 <Link href={`/prints/${print.id}`}>
                   <div className="aspect-[4/5] overflow-hidden bg-surface-container mb-8 relative cursor-pointer">
@@ -105,18 +242,12 @@ export default async function Home() {
                 </div>
               </div>
               <div className="w-full mt-12">
-                <AddToCartButton
-                  item={{
-                    id: 'yellow-studio',
-                    title: 'The Yellow Studio',
-                    price: 450,
-                    imageUrl: '/assets/photos/WhatsApp Image 2026-03-30 at 10.14.16 AM.jpeg',
-                    isLimited: true,
-                    frame: '24x36" | Hahnemühle Rag | Limited Edition',
-                  }}
-                  label="ADD TO CART — $450"
-                  className="w-full bg-on-background text-background font-label uppercase tracking-widest py-6 text-sm hover:bg-primary transition-all active:scale-[0.98]"
-                />
+                <Link
+                  href="/shop"
+                  className="w-full bg-on-background text-background font-label uppercase tracking-widest py-6 text-sm hover:bg-primary transition-all active:scale-[0.98] flex items-center justify-center"
+                >
+                  VIEW IN SHOP
+                </Link>
               </div>
             </div>
           </div>
@@ -163,7 +294,7 @@ export default async function Home() {
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 pt-12 border-t border-outline-variant/20">
             <span className="font-['Anton'] text-[#bbcac6] text-4xl">GALLERY</span>
-            <p className="font-label text-xs tracking-widest text-[#dde5dc]/30">© 2024 GALLERY PRINT SHOP. ALL RIGHTS RESERVED.</p>
+            <p className="font-label text-xs tracking-widest text-[#dde5dc]/30">© 2026 GALLERY PRINT SHOP. ALL RIGHTS RESERVED.</p>
             <div className="flex gap-6">
               <a className="text-[#bbcac6] hover:opacity-70 transition-opacity" href="#"><span className="material-symbols-outlined" data-icon="photo_camera">photo_camera</span></a>
               <a className="text-[#bbcac6] hover:opacity-70 transition-opacity" href="#"><span className="material-symbols-outlined" data-icon="alternate_email">alternate_email</span></a>
@@ -171,6 +302,7 @@ export default async function Home() {
           </div>
         </div>
       </footer>
-    </>
+    </div>
+  </>
   )
 }

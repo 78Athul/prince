@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GALLERY | All Prints</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Epilogue:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#161d18",
+              "on-secondary-container": "#b6b9b4",
+              "on-error": "#690005",
+              "on-error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#c1c9c0",
+              "on-primary": "#263330",
+              "inverse-on-surface": "#2b322c",
+              "surface-bright": "#343b35",
+              "error-container": "#93000a",
+              "primary": "#d7e6e2",
+              "on-tertiary-fixed": "#161d18",
+              "error": "#ffb4ab",
+              "surface": "#0e1510",
+              "on-surface": "#dde5dc",
+              "on-tertiary-fixed-variant": "#414942",
+              "on-primary-fixed": "#111e1c",
+              "inverse-surface": "#dde5dc",
+              "on-background": "#dde5dc",
+              "on-surface-variant": "#c2c8c5",
+              "on-secondary-fixed-variant": "#444844",
+              "surface-variant": "#2f3731",
+              "on-tertiary": "#2b322c",
+              "on-secondary-fixed": "#181d19",
+              "secondary": "#c4c7c2",
+              "on-secondary": "#2d312e",
+              "outline-variant": "#424846",
+              "on-primary-container": "#485552",
+              "surface-dim": "#0e1510",
+              "surface-container-highest": "#2f3731",
+              "surface-container-high": "#242c26",
+              "secondary-fixed-dim": "#c4c7c2",
+              "surface-container": "#1a211c",
+              "primary-container": "#bbcac6",
+              "primary-fixed": "#d7e6e2",
+              "on-tertiary-container": "#4d554e",
+              "outline": "#8c9290",
+              "surface-container-lowest": "#09100b",
+              "primary-fixed-dim": "#bbcac6",
+              "tertiary": "#dde5dc",
+              "tertiary-container": "#c1c9c0",
+              "secondary-container": "#464a46",
+              "inverse-primary": "#53615e",
+              "tertiary-fixed": "#dde5dc",
+              "background": "#0e1510",
+              "surface-tint": "#bbcac6",
+              "secondary-fixed": "#e0e3de",
+              "on-primary-fixed-variant": "#3c4a47"
+            },
+            fontFamily: {
+              "headline": ["Epilogue"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"],
+              "anton": ["Anton"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Custom Parallax-like depth layers */
+        .topo-bg {
+            background: radial-gradient(circle at 50% 50%, #161d18 0%, #0e1510 100%);
+            position: relative;
+            overflow: hidden;
+          }
+        .topo-layer {
+            position: absolute;
+            inset: 0;
+            opacity: 0.15;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23bbcac6' d='M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-46.2C87.4,-33.3,90,-16.7,89.6,-0.2C89.2,16.2,85.8,32.5,78.2,46.1C70.6,59.7,58.8,70.7,45.1,78.2C31.4,85.7,15.7,89.7,0.1,89.5C-15.5,89.3,-31,84.9,-44.8,77.5C-58.5,70.1,-70.5,59.7,-78.3,46.3C-86,32.9,-89.6,16.4,-89.2,0.2C-88.8,-15.9,-84.4,-31.8,-76.3,-45.5C-68.2,-59.1,-56.3,-70.5,-42.6,-77.9C-28.9,-85.3,-14.4,-88.7,0.4,-89.4C15.2,-90.1,30.5,-83.6,44.7,-76.4Z' transform='translate(100 100)' /%3E%3C/svg%3E");
+            background-size: 150% 150%;
+            background-position: center;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#0e1510] dark:bg-[#0e1510]">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#bbcac6]" data-icon="menu">menu</span>
+</div>
+<h1 class="text-2xl font-normal tracking-tighter text-[#dde5dc] font-anton uppercase">GALLERY</h1>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#bbcac6]" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</header>
+<main class="pt-0">
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex flex-col items-center justify-center topo-bg px-6">
+<div class="topo-layer scale-150"></div>
+<div class="topo-layer scale-110 rotate-45 opacity-10"></div>
+<div class="z-10 text-center">
+<p class="font-label text-[10px] tracking-[0.3em] text-primary uppercase mb-4 opacity-70">Curated Exhibition</p>
+<h2 class="font-anton text-[64px] sm:text-[80px] leading-[0.9] text-on-surface uppercase tracking-tight max-w-[300px] mx-auto">
+                    EXPLORE THE GALLERY
+                </h2>
+</div>
+<div class="absolute bottom-24 flex flex-col items-center gap-2 opacity-60">
+<span class="font-label text-[10px] tracking-[0.5em] uppercase">SCROLL</span>
+<div class="w-px h-12 bg-primary/30"></div>
+</div>
+</section>
+<!-- Filter Bar -->
+<nav class="sticky top-16 z-40 bg-surface/90 backdrop-blur-md py-6 px-6 overflow-hidden">
+<div class="flex gap-4 overflow-x-auto hide-scrollbar whitespace-nowrap pb-2">
+<button class="px-6 py-2 bg-surface-container-low text-primary-container font-label text-[11px] tracking-widest uppercase border-b-2 border-primary-container">ALL</button>
+<button class="px-6 py-2 bg-surface-container-low text-on-surface-variant font-label text-[11px] tracking-widest uppercase hover:text-primary transition-colors">LANDSCAPE</button>
+<button class="px-6 py-2 bg-surface-container-low text-on-surface-variant font-label text-[11px] tracking-widest uppercase hover:text-primary transition-colors">URBAN</button>
+<button class="px-6 py-2 bg-surface-container-low text-on-surface-variant font-label text-[11px] tracking-widest uppercase hover:text-primary transition-colors">ABSTRACT</button>
+<button class="px-6 py-2 bg-surface-container-low text-on-surface-variant font-label text-[11px] tracking-widest uppercase hover:text-primary transition-colors">MINIMAL</button>
+</div>
+</nav>
+<!-- Section Header -->
+<div class="px-6 mt-16 mb-12">
+<h3 class="font-headline italic text-4xl text-on-surface font-light tracking-tight">ALL PRINTS</h3>
+<div class="w-12 h-[2px] bg-primary mt-4"></div>
+</div>
+<!-- Print Collection -->
+<section class="flex flex-col gap-24 px-6 pb-40">
+<!-- Card 1 -->
+<article class="group">
+<div class="relative aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img alt="Ethereal Highlands" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Distant dramatic mountain peaks shrouded in moody mist and low-hanging clouds under a dark atmospheric sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_F07un_UZ4eYxUtk4KKPpN4HJgl3LHeP73DeeNB7gL8jGNbYlcyVk5NZ3WMI0EAQtZKeVaDnQV4AQzqW92dh-5dTygwoQ0xYx945ri22F1kfDItk63LwlDcG5_HruMbgk1j-jOHTqRT99pDrnjWH4LO7iwV_HCvFzNOe0vsQWZUaR4TzTqzABXpu69E1ao_UkiADy56hluhYCEiWRbAS3OMD2rUYjl1ez_J7CqlJZVBIqZ4b4bXGC5uNfIuUYentMWNGRbFnjryM"/>
+<div class="absolute top-4 right-4 bg-primary text-on-primary px-3 py-1 font-label text-[10px] tracking-widest uppercase">
+                        LIMITED
+                    </div>
+</div>
+<div class="mt-8 flex justify-between items-start">
+<div>
+<h4 class="font-headline text-2xl text-on-surface uppercase tracking-tight">ETHEREAL HIGHLANDS</h4>
+<p class="font-label text-sm text-on-surface-variant mt-1">$450</p>
+</div>
+</div>
+<button class="w-full mt-6 py-4 bg-primary text-on-primary font-label text-[11px] tracking-[0.2em] uppercase hover:bg-primary-container transition-colors duration-400">
+                    ADD TO CART
+                </button>
+</article>
+<!-- Card 2 -->
+<article class="group">
+<div class="relative aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img alt="Concrete Brutality" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Sharp architectural angles of a grey brutalist concrete building against a high contrast clear sky with deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkpxm4ISY1HGJwHABbhrTqE0t5tti3NpfNt3uAK4KhaOFlCRZ229TuXS0Yy3A2tQqqHk-Tnaeyarb_V-Gu_dlb4OzZW4Y1vVwux1cjKOPT-ix4nIvn-MUKTdF_sI_OV4zig1ddUnQWpSkq8dD4aWFhaRSOuFgF30r3P-QD9C2-fWp_9GiRGmrGr2gjdvwujiKPiH13t6BQdnOUCL2Fb9brknt5DZcsxpGFB8VMOPAHtcx-2R3t0wC-56y77ajnJruBe2QxvK3s1Go"/>
+</div>
+<div class="mt-8 flex justify-between items-start">
+<div>
+<h4 class="font-headline text-2xl text-on-surface uppercase tracking-tight">CONCRETE BRUTALITY</h4>
+<p class="font-label text-sm text-on-surface-variant mt-1">$320</p>
+</div>
+</div>
+<button class="w-full mt-6 py-4 bg-primary text-on-primary font-label text-[11px] tracking-[0.2em] uppercase hover:bg-primary-container transition-colors duration-400">
+                    ADD TO CART
+                </button>
+</article>
+<!-- Card 3 -->
+<article class="group">
+<div class="relative aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img alt="Neon Solitude" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Cyberpunk night street scene with glowing purple and blue neon signs reflecting on wet asphalt in an empty alleyway" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDab5TUuPQCkgBmQ-pSgx1Ux7cg_bnb9DUQXLmNyutOPNnpaMukBceq4j8tQx7x4cxbBrtmKW4QwUaCbxB9TqCmqVxWDP8DBxCRowmc6J6KWpWRMyOyyMPWvFNVpA1C-u3llf3DT6Q4e3mujxV26heO1MK5Mh7VbDS-izDldp3j0xjcmjKZtrHKL3op02pymNdssCGK6g9mfxcQwxoX_9PAmvbwnM-RmEVBmsim4KHlVdxv8sBa38_4MPWR0V7pZeJmQhKoH7tbxiI"/>
+<div class="absolute top-4 right-4 bg-primary text-on-primary px-3 py-1 font-label text-[10px] tracking-widest uppercase">
+                        LIMITED
+                    </div>
+</div>
+<div class="mt-8 flex justify-between items-start">
+<div>
+<h4 class="font-headline text-2xl text-on-surface uppercase tracking-tight">NEON SOLITUDE</h4>
+<p class="font-label text-sm text-on-surface-variant mt-1">$580</p>
+</div>
+</div>
+<button class="w-full mt-6 py-4 bg-primary text-on-primary font-label text-[11px] tracking-[0.2em] uppercase hover:bg-primary-container transition-colors duration-400">
+                    ADD TO CART
+                </button>
+</article>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe h-20 bg-[#0e1510]/60 backdrop-blur-md dark:bg-[#0e1510]/60">
+<!-- Active: GALLERY -->
+<a class="flex flex-col items-center justify-center text-[#bbcac6] border-t-2 border-[#bbcac6] pt-2 scale-95" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans'] tracking-widest uppercase">GALLERY</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#dde5dc] opacity-50 pt-2 hover:text-[#bbcac6] hover:opacity-100 transition-all duration-400" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_awesome_motion">auto_awesome_motion</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans'] tracking-widest uppercase">COLLECTIONS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#dde5dc] opacity-50 pt-2 hover:text-[#bbcac6] hover:opacity-100 transition-all duration-400" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans'] tracking-widest uppercase">CURATED</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#dde5dc] opacity-50 pt-2 hover:text-[#bbcac6] hover:opacity-100 transition-all duration-400" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_cart">shopping_cart</span>
+<span class="text-[10px] font-medium font-['Plus_Jakarta_Sans'] tracking-widest uppercase">CART</span>
+</a>
+</nav>
+</body></html>

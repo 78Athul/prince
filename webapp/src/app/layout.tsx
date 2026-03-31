@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import CartDrawer from '@/components/CartDrawer'
+import MobileBottomNav from '@/components/MobileBottomNav'
+import MobileBottomCartSummary from '@/components/MobileBottomCartSummary'
 
 export const metadata: Metadata = {
   title: 'Gallery Print Shop',
@@ -21,6 +23,8 @@ export default function RootLayout({
       <body className="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
         {children}
         <CartDrawer />
+        <MobileBottomCartSummary />
+        <MobileBottomNav />
       </body>
     </html>
   )

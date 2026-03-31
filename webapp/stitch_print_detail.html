@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Epilogue:wght@300;400;500;700&amp;family=Plus+Jakarta+Sans:wght@200;300;400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed-variant": "#414942",
+              "secondary-fixed-dim": "#c4c7c2",
+              "outline-variant": "#424846",
+              "tertiary": "#dde5dc",
+              "tertiary-fixed-dim": "#c1c9c0",
+              "on-tertiary-fixed": "#161d18",
+              "surface-variant": "#2f3731",
+              "primary-container": "#bbcac6",
+              "on-surface-variant": "#c2c8c5",
+              "error-container": "#93000a",
+              "surface-container-low": "#161d18",
+              "secondary-container": "#464a46",
+              "on-secondary-fixed-variant": "#444844",
+              "surface-container-lowest": "#09100b",
+              "surface-container-highest": "#2f3731",
+              "surface-container": "#1a211c",
+              "on-primary": "#263330",
+              "on-error-container": "#ffdad6",
+              "background": "#0e1510",
+              "error": "#ffb4ab",
+              "outline": "#8c9290",
+              "primary-fixed-dim": "#bbcac6",
+              "on-secondary-container": "#b6b9b4",
+              "on-primary-container": "#485552",
+              "primary": "#d7e6e2",
+              "surface": "#0e1510",
+              "secondary": "#c4c7c2",
+              "on-primary-fixed": "#111e1c",
+              "surface-tint": "#bbcac6",
+              "surface-bright": "#343b35",
+              "secondary-fixed": "#e0e3de",
+              "on-surface": "#dde5dc",
+              "surface-dim": "#0e1510",
+              "on-background": "#dde5dc",
+              "on-secondary-fixed": "#181d19",
+              "inverse-on-surface": "#2b322c",
+              "on-tertiary": "#2b322c",
+              "surface-container-high": "#242c26",
+              "primary-fixed": "#d7e6e2",
+              "tertiary-container": "#c1c9c0",
+              "on-primary-fixed-variant": "#3c4a47",
+              "on-error": "#690005",
+              "inverse-surface": "#dde5dc",
+              "on-tertiary-container": "#4d554e",
+              "on-secondary": "#2d312e",
+              "tertiary-fixed": "#dde5dc",
+              "inverse-primary": "#53615e"
+            },
+            fontFamily: {
+              "headline": ["Epilogue"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #0e1510;
+        color: #dde5dc;
+        -webkit-font-smoothing: antialiased;
+      }
+      /* Hide scrollbar but keep functionality */
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full flex justify-between items-center px-6 h-20 bg-[#0e1510]/60 backdrop-blur-xl dark:bg-[#0e1510]/60 z-50">
+<div class="flex items-center justify-center w-10 h-10 hover:bg-[#242c26]/40 transition-colors duration-400 ease-in-out cursor-pointer">
+<span class="material-symbols-outlined text-[#d7e6e2]" data-icon="arrow_back">arrow_back</span>
+</div>
+<h1 class="text-4xl font-['Anton'] uppercase tracking-widest text-[#d7e6e2]">GALLERY</h1>
+<div class="flex items-center justify-center w-10 h-10 hover:bg-[#242c26]/40 transition-colors duration-400 ease-in-out cursor-pointer">
+<span class="material-symbols-outlined text-[#d7e6e2]" data-icon="share">share</span>
+</div>
+</header>
+<main class="pt-20 pb-32">
+<!-- Full-bleed Hero Image -->
+<section class="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img alt="Premium fine art print" class="w-full h-full object-cover" data-alt="Close-up of a high-end abstract fine art painting with visible texture and moody earth tones in a professional gallery lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUOiBUNFupGP_MQ2mG8Y-HHDv789GD48bB5lmPGhiVMXEphZog2cTEUJvRMIl8w6_gZ6Py4RGt6nSKCKjfvATZuU8IDiDkHLWFXNxP_Djg5VQqBvormAX7Rg8VekOs6Tzsvoqzg5IP0nJmxzELkCanipXUpmZCB1NJyKkUvRsnhU3CPcBTkPSxtJavxkCuWzRIHY59i7Sp_pwJh6F5cvImgXaDnesap_XI415Dp3hBsgmUdfevjU7fcPoiXMZcVrEufnFGAVqjeMU"/>
+<!-- Limited Edition Badge -->
+<div class="absolute top-6 left-6 bg-primary text-on-primary px-3 py-1 text-[10px] font-label font-bold tracking-[0.2rem] uppercase">
+                LIMITED EDITION
+            </div>
+<!-- Ambient Glow Overlay -->
+<div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</section>
+<!-- Product Details Content -->
+<section class="px-6 mt-12 space-y-16">
+<!-- Header Group -->
+<div class="space-y-4">
+<div class="flex justify-between items-start gap-4">
+<h2 class="font-headline text-4xl font-light tracking-tight text-on-background leading-tight">
+                        Ethereal Descent <br/><span class="opacity-40 italic font-thin">No. 04</span>
+</h2>
+<span class="font-['Anton'] text-3xl text-primary">$250</span>
+</div>
+<p class="font-body text-base font-light leading-relaxed text-on-surface-variant max-w-sm">
+                    Archival quality fine art print. Hand-signed and precisely crafted for gallery-grade longevity. Printed on 310gsm museum cotton rag.
+                </p>
+</div>
+<!-- Dimensions Selector -->
+<div class="space-y-6">
+<label class="font-label text-[10px] font-bold tracking-[0.2rem] uppercase text-primary opacity-60">DIMENSIONS</label>
+<div class="grid grid-cols-3 gap-px bg-outline-variant/20">
+<button class="py-5 text-center bg-primary-container text-on-primary-container font-body text-sm transition-all duration-400">8x10</button>
+<button class="py-5 text-center bg-surface-container-high text-on-surface font-body text-sm hover:bg-surface-container-highest transition-all duration-400">16x20</button>
+<button class="py-5 text-center bg-surface-container-high text-on-surface font-body text-sm hover:bg-surface-container-highest transition-all duration-400">24x36</button>
+</div>
+</div>
+<!-- Paper Type Selection -->
+<div class="space-y-6">
+<label class="font-label text-[10px] font-bold tracking-[0.2rem] uppercase text-primary opacity-60">PAPER TYPE</label>
+<div class="relative group">
+<select class="w-full appearance-none bg-transparent border-b border-outline-variant/40 py-4 font-body text-on-surface focus:outline-none focus:border-primary transition-colors cursor-pointer">
+<option class="bg-surface-container-high">Hahnemühle Photo Rag (Matte)</option>
+<option class="bg-surface-container-high">Epson Exhibition Luster</option>
+<option class="bg-surface-container-high">Canson Infinity Platine</option>
+</select>
+<span class="material-symbols-outlined absolute right-0 top-4 pointer-events-none text-outline-variant" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Frame Selector -->
+<div class="space-y-6">
+<label class="font-label text-[10px] font-bold tracking-[0.2rem] uppercase text-primary opacity-60">FRAME SELECTION</label>
+<div class="flex flex-wrap gap-3">
+<button class="px-6 py-3 border border-primary text-primary font-body text-xs tracking-wider uppercase bg-primary/5">Unframed</button>
+<button class="px-6 py-3 border border-outline-variant/30 text-on-surface-variant font-body text-xs tracking-wider uppercase hover:border-outline transition-all duration-400">Walnut</button>
+<button class="px-6 py-3 border border-outline-variant/30 text-on-surface-variant font-body text-xs tracking-wider uppercase hover:border-outline transition-all duration-400">Matte Black</button>
+<button class="px-6 py-3 border border-outline-variant/30 text-on-surface-variant font-body text-xs tracking-wider uppercase hover:border-outline transition-all duration-400">Maple</button>
+</div>
+</div>
+<!-- Quantity & CTA -->
+<div class="flex flex-col gap-6 pt-8">
+<div class="flex items-center justify-between border border-outline-variant/20 p-2">
+<span class="font-label text-[10px] font-bold tracking-[0.2rem] uppercase ml-4 opacity-60">QUANTITY</span>
+<div class="flex items-center gap-6">
+<button class="w-10 h-10 flex items-center justify-center hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="remove">remove</span>
+</button>
+<span class="font-headline text-xl">1</span>
+<button class="w-10 h-10 flex items-center justify-center hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-6 font-headline text-lg tracking-widest uppercase flex items-center justify-center gap-4 hover:bg-primary transition-all duration-400 group">
+                    ADD TO CART 
+                    <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform duration-400" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Curator Note Section (Asymmetric Detail) -->
+<div class="pt-16 pb-12 border-t border-outline-variant/10">
+<div class="grid grid-cols-12 gap-4">
+<div class="col-span-2">
+<span class="material-symbols-outlined text-primary-fixed-dim" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="col-span-10">
+<h4 class="font-headline text-sm uppercase tracking-widest text-primary mb-2">Curator's Note</h4>
+<p class="font-body text-xs font-light leading-relaxed text-on-surface-variant opacity-70 italic">
+                            "This piece was captured during the pre-dawn silence in the Faroe Islands. The lack of standard contrast allows the ethereal mist to become a physical presence in the print."
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-4 pb-safe bg-[#09100b] dark:bg-[#09100b] z-50">
+<a class="flex flex-col items-center justify-center text-[#242c26] hover:text-[#bbcac6] transition-all duration-400" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#242c26] hover:text-[#bbcac6] transition-all duration-400" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#d7e6e2] scale-110" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_bag" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#242c26] hover:text-[#bbcac6] transition-all duration-400" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</a>
+</nav>
+<!-- Ambient Surface Background Layering -->
+<div class="fixed inset-0 pointer-events-none -z-10 bg-surface">
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 50% 50%, #242c26 0%, transparent 70%);"></div>
+</div>
+</body></html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Epilogue:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#dde5dc",
+              "on-tertiary-container": "#4d554e",
+              "tertiary": "#dde5dc",
+              "surface-variant": "#2f3731",
+              "primary-fixed": "#d7e6e2",
+              "on-error-container": "#ffdad6",
+              "on-secondary-container": "#b6b9b4",
+              "primary-fixed-dim": "#bbcac6",
+              "on-error": "#690005",
+              "surface-container-low": "#161d18",
+              "secondary-fixed-dim": "#c4c7c2",
+              "secondary-fixed": "#e0e3de",
+              "on-secondary": "#2d312e",
+              "on-surface-variant": "#c2c8c5",
+              "background": "#0e1510",
+              "secondary": "#c4c7c2",
+              "on-surface": "#dde5dc",
+              "tertiary-fixed-dim": "#c1c9c0",
+              "surface-tint": "#bbcac6",
+              "on-tertiary": "#2b322c",
+              "on-primary-container": "#485552",
+              "primary-container": "#bbcac6",
+              "outline-variant": "#424846",
+              "on-primary-fixed": "#111e1c",
+              "on-primary": "#263330",
+              "on-secondary-fixed-variant": "#444844",
+              "primary": "#d7e6e2",
+              "tertiary-fixed": "#dde5dc",
+              "inverse-on-surface": "#2b322c",
+              "surface-container-high": "#242c26",
+              "on-tertiary-fixed-variant": "#414942",
+              "surface-container-highest": "#2f3731",
+              "on-primary-fixed-variant": "#3c4a47",
+              "surface": "#0e1510",
+              "error-container": "#93000a",
+              "error": "#ffb4ab",
+              "surface-container": "#1a211c",
+              "on-tertiary-fixed": "#161d18",
+              "outline": "#8c9290",
+              "inverse-primary": "#53615e",
+              "on-background": "#dde5dc",
+              "tertiary-container": "#c1c9c0",
+              "surface-container-lowest": "#09100b",
+              "surface-bright": "#343b35",
+              "secondary-container": "#464a46",
+              "surface-dim": "#0e1510",
+              "on-secondary-fixed": "#181d19"
+            },
+            fontFamily: {
+              "headline": ["Epilogue"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"none": "0", "DEFAULT": "0", "lg": "0", "xl": "0", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0e1510;
+            color: #dde5dc;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-[#0e1510] flex justify-between items-center w-full px-8 py-6 sticky top-0 z-50 bg-gradient-to-b from-[#161d18] to-[#0e1510]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#bbcac6] cursor-pointer active:opacity-80 transition-opacity" data-icon="menu">menu</span>
+<h1 class="font-['Anton'] uppercase text-4xl tracking-tighter text-[#dde5dc]">GALLERY STUDIO</h1>
+</div>
+<div class="w-10 h-10 bg-surface-container-high flex items-center justify-center cursor-pointer overflow-hidden border border-outline-variant/20">
+<img alt="Admin Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a professional art curator in a dimly lit modern gallery setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmFXg_BEg35OO-WtUl3qLQ6yXg0vsVNyRaw7A0alKhYwMpQ26k76NZ-uM_NzD-7i8Bc7GAfE-tFw7ov-_2m7bKJP_etyfsRu_XVg9Si__Rnzsn8icaUuawfSE88I65CSSXGZtEpWH7ffcDtsiFqmM4BNbY5SKt1_0nUcx_mDVU5hsZbJCbZiXzy5k6bAIBvet_t3dyh3-f_H-0JoOesP7XrGDCLOdEQFe04kWlrO5NvI2k-I6KsfRpv78p4vgV-qytwk1iCst2vN4"/>
+</div>
+</header>
+<!-- Navigation Tabs (Derived from NavigationDrawer Labels for Context) -->
+<nav class="bg-surface sticky top-[88px] z-40 border-b border-outline-variant/10">
+<div class="flex w-full overflow-x-auto no-scrollbar">
+<!-- Active Tab: Inventory -->
+<button class="flex-1 px-6 py-4 font-label uppercase tracking-[0.2em] text-[12px] whitespace-nowrap text-[#bbcac6] border-b-2 border-[#bbcac6] bg-[#242c26] font-bold ease-in-out transition-all">
+                Inventory
+            </button>
+<!-- Inactive Tab: Upload -->
+<button class="flex-1 px-6 py-4 font-label uppercase tracking-[0.2em] text-[12px] whitespace-nowrap text-[#dde5dc]/50 hover:bg-[#161d18] ease-in-out transition-all">
+                Upload
+            </button>
+<!-- Inactive Tab: Orders -->
+<button class="flex-1 px-6 py-4 font-label uppercase tracking-[0.2em] text-[12px] whitespace-nowrap text-[#dde5dc]/50 hover:bg-[#161d18] ease-in-out transition-all">
+                Orders
+            </button>
+</div>
+</nav>
+<!-- Main Content: Inventory List -->
+<main class="px-6 py-8 pb-32">
+<div class="flex flex-col gap-6">
+<!-- Inventory Card 1 -->
+<div class="flex items-center p-4 bg-surface-container-low transition-colors duration-400 hover:bg-surface-container-high group">
+<div class="w-20 h-20 flex-shrink-0 bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="abstract painting with deep greens and gold leaf textures in a moody gallery lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6fOmt0iiLFKoeQyJSLdE6CEDA6BE7aJS87_S2_Yzex1yWAgtu7qiN2E2Fr837qn4IyZKhR5Q6GK2YsOiXGRr_w2ev_5G9Nyzh7wABNnyTyYQesiB9qYWRmrC6mrZwzXK7uLaOY7kiSV3i1Y9sGE2Zt4CAEd5a-WJwl75XPdPwcF84jsxUsnSlKzZiVL5dV81lXE0tc90NdhOfT9jWxvmmhWrcm7N5D60OrIxT2QXjIm5cJdTY0toC0HrViGGZqJIB3L7DSITn0vk"/>
+</div>
+<div class="ml-6 flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-lg text-on-surface leading-tight">Ethereal Highlands</h3>
+<p class="font-body text-sm text-on-surface-variant mt-1">$450.00</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+<div class="mt-2">
+<span class="inline-block px-2 py-0.5 text-[10px] font-label font-bold tracking-widest uppercase bg-primary-container text-on-primary-container">Limited</span>
+</div>
+</div>
+</div>
+<!-- Inventory Card 2 -->
+<div class="flex items-center p-4 bg-surface-container-low transition-colors duration-400 hover:bg-surface-container-high group">
+<div class="w-20 h-20 flex-shrink-0 bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="architectural photography of a minimalist concrete structure with dramatic shadows and sharp lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc7tlkSguiKzp6X_zyQtuyoqxaOProQXL0k3DYD65B-wx8QXRio_FV86MWWNAgGS-OTR7zibX49jdqeZ-Lje-lN-PrsMtSC9e9r2BLoTlOTcZThEiSHLdqxCTB5r6onnBRKjPX1aVIdO134P3gU3oa2ut8-QX3daeGf-gV07lj_9OtxTCxjAs9ew9VJECzEFakv9oDPOjy0zE73FImIjeSyAW8v8MHvTmLY8fVYAbz3OpcWAJJZXNZdCFltUwzU363uPMyWSN2K4M"/>
+</div>
+<div class="ml-6 flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-lg text-on-surface leading-tight">Nocturnal Monolith</h3>
+<p class="font-body text-sm text-on-surface-variant mt-1">$380.00</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+<div class="mt-2">
+<span class="inline-block px-2 py-0.5 text-[10px] font-label font-bold tracking-widest uppercase bg-primary-container text-on-primary-container">Limited</span>
+</div>
+</div>
+</div>
+<!-- Inventory Card 3 -->
+<div class="flex items-center p-4 bg-surface-container-low transition-colors duration-400 hover:bg-surface-container-high group">
+<div class="w-20 h-20 flex-shrink-0 bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="minimalist macro photography of a single white lily against a pure black background with soft rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUtlpb2AV2hs6gi4mztvTMvb0g016J_UDkLf1ba7de3MnmjUG2fs5alCOYJOmM9fTafWjeHyTzmsoIosw3_grSdbHLKkYr4ydznlE_-0zHIBOVQfpjMP3dC8S_xoPISpy-Z629t85_b8JX5GU1i-wLTVjgXyZAAxfliMZchILpSMLnfDq5YgbUtCEOcbK1Psc8HOM3NfzTcIs9OPTbzMKE_oMsB9Yz15csQZXZb0RxqYIyX1sVVlfKR_mhoBfVt58PMJUmDI_5k5Q"/>
+</div>
+<div class="ml-6 flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-lg text-on-surface leading-tight">Silent Bloom</h3>
+<p class="font-body text-sm text-on-surface-variant mt-1">$520.00</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+<div class="mt-2">
+<span class="inline-block px-2 py-0.5 text-[10px] font-label font-bold tracking-widest uppercase bg-primary-container text-on-primary-container">Limited</span>
+</div>
+</div>
+</div>
+<!-- Inventory Card 4 -->
+<div class="flex items-center p-4 bg-surface-container-low transition-colors duration-400 hover:bg-surface-container-high group">
+<div class="w-20 h-20 flex-shrink-0 bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="top down view of dark ocean waves crashing against jagged black volcanic rocks in low light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3yYOpLVfJYiGFXycKQzKXTePWkTFho_sxNlYu_xtDlPJDeQEcf1OVbszySRTy6Hx5TAuAU3a70ulb_6XEtzC4U6pIiGHfKbfpEuZDuC5F3uLrzze6jFKzf4_1EAZ9g9mKTCRqOs_D_3vuv_532tZ5pKSIR2g2PDqyk2EAMdf9UvMilMKY7jBWZR2oXYWiAFgiwTt3MFfJygo_bHvtTew_Z5Ln4cf9c5bw_z9pZ4wfK9rrMp9CojRhvDbuDLGXSjXskaVUMdkoYsk"/>
+</div>
+<div class="ml-6 flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-lg text-on-surface leading-tight">Dark Tides II</h3>
+<p class="font-body text-sm text-on-surface-variant mt-1">$610.00</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+<div class="mt-2">
+<span class="inline-block px-2 py-0.5 text-[10px] font-label font-bold tracking-widest uppercase bg-primary-container text-on-primary-container">Limited</span>
+</div>
+</div>
+</div>
+<!-- Inventory Card 5 -->
+<div class="flex items-center p-4 bg-surface-container-low transition-colors duration-400 hover:bg-surface-container-high group">
+<div class="w-20 h-20 flex-shrink-0 bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="contemporary sculpture of brushed platinum with complex curves standing in a dark museum hall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsE-Lm_6y3yWTi-NpOw0rkOHV3tv8_boS4zcthG1JRXYem5DZTv8LTl_9-qUluI0-pWSj8ZDw6mshmDLNaA4CXePg2GFeSOsgKFRGGBqZd6K691zn0kr6k8iaWyoMnGuLHBs_uXh2XPlhdMNUo5iKl44_DKnlEiFUH0G5lle-c3f835QuTa-ygyedXoz3zO6yRjj3wjAZ4ZxdAc1WPnCD6NdBGUSl_Qs5XNDnsvJnuhqag3CWRmbO5HIQaHLY4wZhDYKa5rd6O5So"/>
+</div>
+<div class="ml-6 flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline text-lg text-on-surface leading-tight">Kinetic Silver</h3>
+<p class="font-body text-sm text-on-surface-variant mt-1">$1,200.00</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="more_vert">more_vert</span>
+</div>
+<div class="mt-2">
+<span class="inline-block px-2 py-0.5 text-[10px] font-label font-bold tracking-widest uppercase bg-primary-container text-on-primary-container">Limited</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-6 w-16 h-16 bg-[#bbcac6] text-[#0e1510] flex items-center justify-center shadow-2xl active:scale-95 transition-all duration-300 z-50">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="add">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-[#0e1510]/60 backdrop-blur-xl border-t border-[#bbcac6]/5 shadow-[0_-10px_40px_rgba(187,202,198,0.05)]">
+<div class="flex flex-col items-center justify-center text-[#dde5dc]/40 hover:text-[#dde5dc] transition-all duration-300 active:scale-95 cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="filter_frames">filter_frames</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-widest">Gallery</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#bbcac6] scale-110 active:scale-95 cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-widest">Studio</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#dde5dc]/40 hover:text-[#dde5dc] transition-all duration-300 active:scale-95 cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] uppercase tracking-widest">Settings</span>
+</div>
+</nav>
+</body></html>

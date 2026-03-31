@@ -8,6 +8,9 @@ export interface CartItem {
   imageUrl: string
   isLimited: boolean
   frame: string
+  // Print size fields (optional for backward compat with existing gallery pages)
+  printSizeId?: string
+  printSizeLabel?: string
 }
 
 interface CartState {

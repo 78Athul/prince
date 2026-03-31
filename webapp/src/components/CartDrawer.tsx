@@ -2,6 +2,7 @@
 
 import { useCartStore } from '@/store/cart'
 import { useEffect } from 'react'
+import Link from 'next/link'
 
 export default function CartDrawer() {
   const { items, isOpen, closeCart, removeItem, updateQuantity, totalPrice } =
@@ -151,11 +152,15 @@ export default function CartDrawer() {
               </span>
             </div>
             <p className="font-['Plus_Jakarta_Sans'] text-[10px] tracking-[0.1em] text-[#8e928d] mb-6">
-              SHIPPING CALCULATED AT CHECKOUT
+              PRICING CONFIRMED AFTER INQUIRY
             </p>
-            <button className="w-full bg-[#bbcac6] text-[#0e1510] font-['Anton'] uppercase tracking-widest py-5 text-sm hover:bg-[#d7e6e2] transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-[0.98]">
-              Checkout Now
-            </button>
+            <Link
+              href="/checkout"
+              onClick={closeCart}
+              className="w-full bg-[#bbcac6] text-[#0e1510] font-['Anton'] uppercase tracking-widest py-5 text-sm hover:bg-[#d7e6e2] transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-[0.98] flex items-center justify-center"
+            >
+              Inquire About Prints
+            </Link>
           </div>
         )}
       </aside>

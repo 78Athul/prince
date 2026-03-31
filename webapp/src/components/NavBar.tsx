@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import { Button, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon';
 import { useScroll } from '@/components/ui/use-scroll';
@@ -44,7 +43,36 @@ export default function NavBar() {
 	}, [open]);
 
 	return (
-		<header
+		<>
+			{/* Mobile Top Nav (Stitch) */}
+			<header className="md:hidden fixed top-0 w-full flex justify-between items-center px-6 h-16 bg-[#0e1510] z-50">
+				<div 
+					className="flex items-center cursor-pointer p-2 -ml-2 text-[#bbcac6] hover:opacity-80 transition-opacity flex-shrink-0 w-10"
+					onClick={() => setOpen(!open)}
+				>
+					{open ? (
+						<span className="material-symbols-outlined">close</span>
+					) : (
+						<span className="material-symbols-outlined">menu</span>
+					)}
+				</div>
+				<Link href="/" className="text-2xl font-normal tracking-tighter text-[#dde5dc] font-display uppercase hover:opacity-80 transition-opacity text-center absolute left-1/2 -translate-x-1/2">GALLERY</Link>
+				<div 
+					className="flex items-center cursor-pointer p-2 -mr-2 text-[#bbcac6] hover:opacity-80 transition-opacity relative flex-shrink-0 w-10 justify-end"
+					onClick={toggleCart}
+				>
+					<span className="material-symbols-outlined">shopping_bag</span>
+					{count > 0 && (
+						<span className="absolute top-1 right-1 bg-[#bbcac6] text-[#0e1510] text-[9px] font-bold w-4 h-4 flex items-center justify-center">
+							{count}
+						</span>
+					)}
+				</div>
+			</header>
+
+			{/* Desktop Nav */}
+			<header
+
 			className={cn(
 				'fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-out',
                 open 
@@ -56,7 +84,7 @@ export default function NavBar() {
 		>
 			<nav
 				className={cn(
-					'flex w-full items-center justify-between px-6 py-4 md:px-12 md:py-6 transition-all duration-300 ease-out'
+					'hidden md:flex w-full items-center justify-between px-6 py-4 md:px-12 md:py-6 transition-all duration-300 ease-out'
 				)}
 			>
 				<Link href="/" className="text-[#bbcac6] hover:opacity-80 transition-opacity">
@@ -84,26 +112,13 @@ export default function NavBar() {
 						)}
 					</button>
 
-					<div className="flex items-center gap-4 md:hidden">
-						<button onClick={toggleCart} className="text-[#bbcac6] hover:opacity-80 transition-opacity relative flex items-center justify-center">
-							<span className="material-symbols-outlined text-[24px]">shopping_bag</span>
-							{count > 0 && (
-								<span className="absolute -top-1 -right-2 bg-[#bbcac6] text-[#0e1510] text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
-									{count}
-								</span>
-							)}
-						</button>
-						<button onClick={() => setOpen(!open)} className="text-[#bbcac6] hover:opacity-80 transition-opacity flex items-center justify-center">
-							<MenuToggleIcon open={open} className="size-7" duration={300} />
-						</button>
-					</div>
 				</div>
 			</nav>
 
 			{/* Mobile Full Screen Menu */}
 			<div
 				className={cn(
-					'fixed top-[72px] left-0 w-full h-[calc(100vh-72px)] bg-[#0e1510] flex-col overflow-hidden transition-all duration-300 ease-out z-40',
+					'md:hidden fixed top-[64px] left-0 w-full h-[calc(100vh-64px)] bg-[#0e1510] flex-col overflow-hidden transition-all duration-300 ease-out z-40',
 					open ? 'flex opacity-100' : 'hidden opacity-0'
 				)}
 			>
@@ -134,6 +149,7 @@ export default function NavBar() {
 				</div>
 			</div>
 		</header>
+		</>
 	);
 }
 
