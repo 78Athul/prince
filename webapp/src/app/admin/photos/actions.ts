@@ -147,6 +147,69 @@ export async function updatePhoto(id: string, formData: FormData) {
   return { success: true }
 }
 
+export async function updatePhotoImage(id: string, formData: FormData) {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) return { error: 'Unauthorized' }
+
+  const file = formData.get('image') as File
+  if (!file || file.size === 0) return { error: 'Please select an image file.' }
+
+  // Fetch current cloudinary_url so we can delete the old asset
+  const { data: print } = await supabase
+    .from('prints')
+    .select('cloudinary_url')
+    .eq('id', id)
+    .single()
+
+  // Upload new image to Cloudinary
+  const arrayBuffer = await file.arrayBuffer()
+  const buffer = Buffer.from(arrayBuffer)
+
+  let cloudinaryResult: { secure_url: string }
+  try {
+    cloudinaryResult = await new Promise((resolve, reject) => {
+      const stream = cloudinary.uploader.upload_stream(
+        { folder: 'gallery_prints', resource_type: 'image' },
+        (err, result) => {
+          if (result) resolve(result as { secure_url: string })
+          else reject(err)
+        }
+      )
+      stream.end(buffer)
+    })
+  } catch (err: any) {
+    return { error: `Image upload failed: ${err.message}` }
+  }
+
+  // Update the record with the new URL
+  const { error } = await supabase
+    .from('prints')
+    .update({ cloudinary_url: cloudinaryResult.secure_url })
+    .eq('id', id)
+
+  if (error) return { error: error.message }
+
+  // Delete old Cloudinary asset (non-fatal)
+  if (print?.cloudinary_url) {
+    try {
+      const match = print.cloudinary_url.match(/\/gallery_prints\/([^.]+)/)
+      if (match) await cloudinary.uploader.destroy(`gallery_prints/${match[1]}`)
+    } catch {
+      // Non-fatal
+    }
+  }
+
+  revalidatePath('/admin/photos')
+  revalidatePath(`/admin/photos/${id}/edit`)
+  revalidatePath(`/shop/${id}`)
+  revalidatePath(`/prints/${id}`)
+  revalidatePath('/shop')
+  revalidatePath('/gallery')
+  revalidatePath('/')
+  return { success: true }
+}
+
 export async function updatePrintSizes(printId: string, sizes: { size_label: string; price: string; stock_status: string }[]) {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()

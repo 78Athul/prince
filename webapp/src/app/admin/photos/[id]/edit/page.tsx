@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState, useActionState } from 'react'
-import { updatePhoto, updatePrintSizes } from '../../actions'
+import { updatePhoto, updatePrintSizes, updatePhotoImage } from '../../actions'
 import { createClient } from '@/utils/supabase/client'
 import { useParams, useRouter } from 'next/navigation'
 
@@ -18,6 +18,8 @@ export default function EditPhotoPage() {
   const [sizes, setSizes] = useState<PrintSizeRow[]>([])
   const [loading, setLoading] = useState(true)
   const [sizesMsg, setSizesMsg] = useState('')
+  const [imgFile, setImgFile] = useState<File | null>(null)
+  const [imgPreview, setImgPreview] = useState<string | null>(null)
 
   useEffect(() => {
     async function load() {
@@ -38,6 +40,22 @@ export default function EditPhotoPage() {
       const result = await updatePhoto(id, formData)
       if (result.success) return { msg: 'Photo updated successfully!', error: '' }
       return { msg: '', error: result.error || 'Update failed.' }
+    },
+    { msg: '', error: '' }
+  )
+
+  const [imgState, imgAction, imgPending] = useActionState(
+    async (_prev: { msg: string; error: string }, formData: FormData) => {
+      const result = await updatePhotoImage(id, formData)
+      if (result.success) {
+        setImgFile(null)
+        setImgPreview(null)
+        const supabase = createClient()
+        const { data: p } = await supabase.from('prints').select('cloudinary_url').eq('id', id).single()
+        if (p) setPhoto((prev: any) => ({ ...prev, cloudinary_url: p.cloudinary_url }))
+        return { msg: 'Image replaced successfully!', error: '' }
+      }
+      return { msg: '', error: result.error || 'Image replacement failed.' }
     },
     { msg: '', error: '' }
   )
@@ -74,7 +92,7 @@ export default function EditPhotoPage() {
       {/* Current image */}
       <div className="mb-10 border border-white/10 bg-[#111a13] p-4 inline-block">
         <img src={photo.cloudinary_url} alt={photo.title} className="h-40 w-auto object-contain" />
-        <p className="font-label text-[10px] text-white/30 tracking-wider mt-3">Current image (cannot be replaced — delete and re-upload to change)</p>
+        <p className="font-label text-[10px] text-white/30 tracking-wider mt-3">Current image</p>
       </div>
 
       {state.msg && (
@@ -191,6 +209,50 @@ export default function EditPhotoPage() {
             Save Sizes
           </button>
         </div>
+      </div>
+
+      {/* Replace image section */}
+      <div className="border-t border-white/10 pt-10 mt-4">
+        <h2 className="font-label text-xs uppercase tracking-[0.25em] text-[#bbcac6] mb-6">Replace Photo</h2>
+
+        {imgState.msg && (
+          <div className="bg-emerald-900/30 border border-emerald-500/40 text-emerald-400 p-4 font-body text-sm mb-6">{imgState.msg}</div>
+        )}
+        {imgState.error && (
+          <div className="bg-red-900/30 border border-red-500/40 text-red-400 p-4 font-body text-sm mb-6">{imgState.error}</div>
+        )}
+
+        <form action={imgAction} className="flex flex-col gap-6 max-w-xl">
+          <div className="border border-dashed border-white/20 p-6 flex flex-col items-center gap-4 bg-[#111a13]">
+            {imgPreview ? (
+              <img src={imgPreview} alt="New image preview" className="h-48 w-auto object-contain" />
+            ) : (
+              <div className="flex flex-col items-center gap-2 text-white/30">
+                <span className="material-symbols-outlined text-4xl">add_photo_alternate</span>
+                <span className="font-label text-xs uppercase tracking-widest">Select new image</span>
+              </div>
+            )}
+            <input
+              type="file"
+              name="image"
+              accept="image/*"
+              required
+              onChange={(e) => {
+                const file = e.target.files?.[0] || null
+                setImgFile(file)
+                setImgPreview(file ? URL.createObjectURL(file) : null)
+              }}
+              className="font-body text-sm text-white/60 file:mr-4 file:py-2 file:px-4 file:border-0 file:bg-[#bbcac6] file:text-[#0e1510] file:font-label file:uppercase file:tracking-wider file:text-xs file:cursor-pointer"
+            />
+          </div>
+          <button
+            type="submit"
+            disabled={imgPending || !imgFile}
+            className="bg-[#bbcac6] text-[#0e1510] font-label uppercase tracking-widest py-4 text-sm hover:bg-[#dde5dc] transition-colors disabled:opacity-50"
+          >
+            {imgPending ? 'Replacing...' : 'Replace Image'}
+          </button>
+        </form>
       </div>
 
       <style jsx>{`
