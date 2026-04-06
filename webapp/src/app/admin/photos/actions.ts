@@ -13,6 +13,7 @@ export async function uploadPhoto(formData: FormData) {
   const description = formData.get('description') as string
   const altText = (formData.get('alt_text') as string) || title
   const category = formData.get('category') as string
+  const placement = (formData.get('placement') as string) || 'gallery'
   const isLimited = formData.get('is_limited_edition') === 'on'
   const file = formData.get('image') as File
   const sizesRaw = formData.get('print_sizes') as string
@@ -45,6 +46,10 @@ export async function uploadPhoto(formData: FormData) {
   const validPrices = sizes.map((s) => parseFloat(s.price)).filter((p) => !isNaN(p))
   const basePrice = validPrices.length > 0 ? Math.min(...validPrices) : 0
 
+  if (placement !== 'gallery') {
+    await supabase.from('prints').update({ placement: 'gallery' }).eq('placement', placement)
+  }
+
   const { data: print, error: printError } = await supabase
     .from('prints')
     .insert({
@@ -52,6 +57,7 @@ export async function uploadPhoto(formData: FormData) {
       description: description?.trim() || null,
       alt_text: altText.trim(),
       category: category || null,
+      placement: placement,
       is_limited_edition: isLimited,
       is_available: true,
       cloudinary_url: cloudinaryResult.secure_url,
@@ -133,11 +139,16 @@ export async function updatePhoto(id: string, formData: FormData) {
   const description = (formData.get('description') as string)?.trim() || null
   const altText = (formData.get('alt_text') as string)?.trim() || title
   const category = (formData.get('category') as string) || null
+  const placement = (formData.get('placement') as string) || 'gallery'
   const isLimited = formData.get('is_limited_edition') === 'on'
+
+  if (placement !== 'gallery') {
+    await supabase.from('prints').update({ placement: 'gallery' }).eq('placement', placement).neq('id', id)
+  }
 
   const { error } = await supabase
     .from('prints')
-    .update({ title, description, alt_text: altText, category, is_limited_edition: isLimited })
+    .update({ title, description, alt_text: altText, category, placement, is_limited_edition: isLimited })
     .eq('id', id)
 
   if (error) return { error: error.message }

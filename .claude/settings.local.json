@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:api.github.com)",
+      "Read(//c/tmp/**)",
+      "Bash(npm pack:*)",
+      "Bash(tar -xf uipro-cli-2.2.3.tgz)",
+      "Bash(npx uipro-cli:*)",
+      "Bash(npm install:*)",
+      "Bash(claude remote-control:*)"
+    ]
+  }
+}

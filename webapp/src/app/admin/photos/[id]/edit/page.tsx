@@ -119,6 +119,15 @@ export default function EditPhotoPage() {
             {CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
           </select>
         </Field>
+        <Field label="Website Placement">
+          <select name="placement" defaultValue={photo.placement || 'gallery'} className="admin-input">
+            <option value="gallery">Gallery Only (Default)</option>
+            <option value="showcase_1">Showcase 1 (Large 8-col Rectangle)</option>
+            <option value="showcase_2">Showcase 2 (Vertical Pill Shape)</option>
+            <option value="showcase_3">Showcase 3 (Circular Frame)</option>
+            <option value="showcase_4">Showcase 4 (Wide 7-col Rectangle)</option>
+          </select>
+        </Field>
         <div className="flex items-center gap-4">
           <input
             type="checkbox"

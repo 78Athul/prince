@@ -56,20 +56,20 @@ export default function PrintConfigurator({ print }: { print: Print }) {
         </div>
       </div>
 
-      <p className="text-on-surface-variant font-body leading-relaxed max-w-lg text-sm">
+      <p className="text-muted font-sans leading-relaxed max-w-lg text-sm">
         Archival quality fine art print. Hand-signed and precisely crafted for gallery-grade longevity.
       </p>
 
       <div className="flex flex-col gap-8 w-full max-w-sm">
         {/* Dimensions */}
         <div className="flex flex-col gap-3">
-          <label className="font-label text-xs uppercase tracking-widest text-outline">Dimensions</label>
+          <label className="font-sans text-[10px] uppercase tracking-widest text-foreground font-bold">DIMENSIONS</label>
           <div className="grid grid-cols-3 gap-2">
             {Object.keys(sizeMultipliers).map((s) => (
               <button
                 key={s}
                 onClick={() => setSize(s)}
-                className={`py-3 text-xs font-label uppercase tracking-widest transition-colors ${size === s ? 'bg-[#dde5dc] text-[#0e1510]' : 'border border-outline-variant text-[#dde5dc]/70 hover:border-[#dde5dc]/50'}`}
+                className={`py-3 text-xs font-sans uppercase tracking-widest transition-colors border ${size === s ? 'border-foreground bg-[#e8efe9] text-foreground font-bold' : 'border-gray-200 text-muted-light hover:border-gray-300 hover:text-foreground bg-white/50'}`}
               >
                 {s}
               </button>
@@ -79,27 +79,27 @@ export default function PrintConfigurator({ print }: { print: Print }) {
 
         {/* Paper / Material */}
         <div className="flex flex-col gap-3">
-          <label className="font-label text-xs uppercase tracking-widest text-outline">Paper Type</label>
+          <label className="font-sans text-[10px] uppercase tracking-widest text-foreground font-bold">PAPER TYPE</label>
           <select
             value={material}
             onChange={(e) => setMaterial(e.target.value)}
-            className="bg-transparent border border-outline-variant text-sm font-body px-4 py-3 outline-none focus:border-primary transition-colors cursor-pointer appearance-none rounded-none"
+            className="bg-transparent border border-gray-200 text-sm font-sans px-4 py-3 outline-none focus:border-foreground transition-colors cursor-pointer appearance-none rounded-none text-foreground bg-white/50"
           >
-            <option className="bg-[#0e1510]">Hahnemühle Rag</option>
-            <option className="bg-[#0e1510]">Canson Etching</option>
-            <option className="bg-[#0e1510]">Baryta FB</option>
+            <option>Hahnemühle Rag</option>
+            <option>Canson Etching</option>
+            <option>Baryta FB</option>
           </select>
         </div>
 
         {/* Frame */}
         <div className="flex flex-col gap-3">
-          <label className="font-label text-xs uppercase tracking-widest text-outline">Frame</label>
+          <label className="font-sans text-[10px] uppercase tracking-widest text-foreground font-bold">FRAME</label>
           <div className="grid grid-cols-2 gap-2">
             {Object.keys(frameAddons).map((f) => (
               <button
                 key={f}
                 onClick={() => setFrame(f)}
-                className={`py-3 text-xs font-label uppercase tracking-widest transition-colors ${frame === f ? 'bg-[#dde5dc] text-[#0e1510]' : 'border border-outline-variant text-[#dde5dc]/70 hover:border-[#dde5dc]/50'}`}
+                className={`py-3 text-xs font-sans uppercase tracking-widest transition-colors border ${frame === f ? 'border-foreground bg-[#e8efe9] text-foreground font-bold' : 'border-gray-200 text-muted-light hover:border-gray-300 hover:text-foreground bg-white/50'}`}
               >
                 {f}
               </button>
@@ -107,14 +107,14 @@ export default function PrintConfigurator({ print }: { print: Print }) {
           </div>
         </div>
 
-        <div className="h-[1px] bg-outline-variant/30 w-full my-4"></div>
+        <div className="h-[1px] bg-gray-200 w-full my-4"></div>
 
         {/* Quantity & Add to Cart */}
         <div className="flex gap-4">
-          <div className="flex items-center border border-outline-variant">
-            <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="w-12 h-12 flex items-center justify-center text-outline hover:text-primary transition-colors">−</button>
-            <span className="w-12 h-12 flex items-center justify-center font-label text-sm border-x border-outline-variant">{quantity}</span>
-            <button onClick={() => setQuantity(quantity + 1)} className="w-12 h-12 flex items-center justify-center text-outline hover:text-primary transition-colors">+</button>
+          <div className="flex items-center border border-gray-200 bg-white/50">
+            <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="w-12 h-12 flex items-center justify-center text-muted hover:text-foreground transition-colors">−</button>
+            <span className="w-12 h-12 flex items-center justify-center font-sans text-sm border-x border-gray-200 text-foreground">{quantity}</span>
+            <button onClick={() => setQuantity(quantity + 1)} className="w-12 h-12 flex items-center justify-center text-muted hover:text-foreground transition-colors">+</button>
           </div>
           
           <button
@@ -123,9 +123,9 @@ export default function PrintConfigurator({ print }: { print: Print }) {
                 handleAddToCart();
               }
             }}
-            className="flex-1 bg-primary text-on-primary font-label uppercase tracking-widest hover:bg-surface-tint transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-[0.98] flex items-center justify-center gap-3"
+            className="flex-1 text-foreground font-sans text-[13px] uppercase tracking-widest hover:bg-gray-100 transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-[0.98] flex items-center justify-center gap-3 border border-transparent"
           >
-            Add to Cart
+            ADD TO CART
             <span className="material-symbols-outlined text-sm">arrow_forward</span>
           </button>
         </div>

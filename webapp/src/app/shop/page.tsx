@@ -2,6 +2,7 @@ import { createClient } from '@/utils/supabase/server'
 import NavBar from '@/components/NavBar'
 import { getThumbnailUrl } from '@/utils/cloudinary-helpers'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata = {
   title: 'Shop Prints — Gallery Print Shop',
@@ -77,11 +78,12 @@ export default async function ShopPage({ searchParams }: { searchParams: Promise
                 <div key={photo.id} className={`group ${i % 2 !== 0 ? 'md:mt-16' : ''}`}>
                   <Link href={`/shop/${photo.id}`}>
                     <div className="aspect-[4/5] overflow-hidden bg-surface-container mb-6 relative cursor-pointer">
-                      <img
+                      <Image
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
                         alt={photo.alt_text || photo.title}
                         src={getThumbnailUrl(photo.cloudinary_url)}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
-                        loading="lazy"
+                        className="object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                       />
                       <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       {photo.is_limited_edition && (

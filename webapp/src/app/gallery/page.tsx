@@ -4,7 +4,7 @@ import NavBar from '@/components/NavBar'
 import AddToCartButton from '@/components/AddToCartButton'
 import { HalideTopoHero } from '@/components/GalleryHero'
 import Link from 'next/link'
-import { dummyPrints } from '@/lib/dummy-data'
+import Image from 'next/image'
 
 export default async function GalleryPage() {
   const supabase = await createClient()
@@ -13,7 +13,7 @@ export default async function GalleryPage() {
     .select('*')
     .order('created_at', { ascending: false })
 
-  const displayPrints = prints && prints.length > 0 ? prints : dummyPrints
+  const displayPrints = prints || []
 
   return (
     <>
@@ -60,7 +60,7 @@ export default async function GalleryPage() {
                 <article key={print.id} className="group">
                     <Link href={`/prints/${print.id}`}>
                         <div className="relative aspect-[4/5] bg-surface-container-lowest overflow-hidden">
-                            <img alt={print.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src={print.cloudinary_url}/>
+                            <Image fill sizes="(max-width: 768px) 100vw, 33vw" alt={print.title} className="object-cover transition-transform duration-700 group-hover:scale-105" src={print.cloudinary_url}/>
                             {print.is_limited_edition && (
                                 <div className="absolute top-4 right-4 bg-primary text-on-primary px-3 py-1 font-label text-[10px] tracking-widest uppercase">
                                     LIMITED
@@ -122,7 +122,7 @@ export default async function GalleryPage() {
               <div key={print.id} className={`group ${i % 2 !== 0 ? 'md:translate-y-24' : ''}`}>
                 <Link href={`/prints/${print.id}`}>
                   <div className="aspect-[4/5] overflow-hidden bg-surface-container mb-8 relative cursor-pointer">
-                    <img alt={print.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" src={print.cloudinary_url}/>
+                    <Image fill sizes="(max-width: 1024px) 50vw, 33vw" alt={print.title} className="object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" src={print.cloudinary_url}/>
                     <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
                 </Link>

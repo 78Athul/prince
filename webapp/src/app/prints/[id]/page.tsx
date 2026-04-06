@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import NavBar from '@/components/NavBar'
 import PrintConfigurator from '@/components/PrintConfigurator'
 import AddToCartButton from '@/components/AddToCartButton'
-import { dummyPrints } from '@/lib/dummy-data'
+import Image from 'next/image'
 
 export default async function PrintDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
@@ -25,10 +25,6 @@ export default async function PrintDetailPage({ params }: { params: Promise<{ id
   }
 
   if (!print) {
-    print = dummyPrints.find(p => p.id === id)
-  }
-
-  if (!print) {
     notFound()
   }
 
@@ -41,7 +37,7 @@ export default async function PrintDetailPage({ params }: { params: Promise<{ id
         <main className="pb-32">
           {/* Full-bleed Hero Image */}
           <section className="relative w-full aspect-[4/5] bg-surface-container-lowest overflow-hidden">
-            <img alt={print.title} className="w-full h-full object-cover" src={print.cloudinary_url}/>
+            <Image fill priority sizes="(max-width: 768px) 100vw, 50vw" alt={print.title} className="object-cover" src={print.cloudinary_url}/>
             {print.is_limited_edition && (
               <div className="absolute top-6 left-6 bg-primary text-on-primary px-3 py-1 text-[10px] font-label font-bold tracking-[0.2rem] uppercase">
                 LIMITED EDITION
@@ -154,11 +150,14 @@ export default async function PrintDetailPage({ params }: { params: Promise<{ id
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-32 w-full h-full">
             
             {/* Left Column: Image */}
-            <div className="w-full lg:w-1/2 flex items-center justify-center p-8 bg-surface-container relative">
-              <img 
-                src={print.cloudinary_url} 
+            <div className="w-full lg:w-1/2 flex items-center justify-center p-8 bg-surface-container relative h-[75vh]">
+              <Image 
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                src={print.cloudinary_url}
                 alt={print.title} 
-                className="max-h-[75vh] w-auto object-contain shadow-2xl relative z-10"
+                className="object-contain drop-shadow-2xl z-10 p-8"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none z-20"></div>
             </div>

@@ -72,10 +72,10 @@ export default function PrintSizeSelector({
                 disabled={isSoldOut}
                 className={`py-4 px-3 text-center transition-all duration-200 border ${
                   isSoldOut
-                    ? 'border-white/5 text-white/20 cursor-not-allowed'
+                    ? 'border-gray-200 text-gray-300 cursor-not-allowed bg-gray-50'
                     : isSelected
-                    ? 'border-[#bbcac6] bg-[#bbcac6]/10 text-[#bbcac6]'
-                    : 'border-white/10 text-white/60 hover:border-[#bbcac6]/40 hover:text-white'
+                    ? 'border-foreground bg-[#e8efe9] text-foreground font-bold'
+                    : 'border-gray-200 text-muted hover:border-gray-300 hover:text-foreground bg-white/50'
                 }`}
               >
                 <p className="font-label text-xs uppercase tracking-wider">
@@ -106,10 +106,10 @@ export default function PrintSizeSelector({
       <button
         onClick={handleAddToCart}
         disabled={!selected || availableSizes.length === 0}
-        className={`w-full py-5 font-label uppercase tracking-widest text-sm transition-all duration-300 ${
+        className={`w-full py-5 font-sans uppercase tracking-widest text-sm transition-all duration-300 border border-transparent flex items-center justify-center gap-3 ${
           added
             ? 'bg-emerald-700 text-white'
-            : 'bg-[#bbcac6] text-[#0e1510] hover:bg-[#dde5dc] active:scale-[0.99]'
+            : 'text-foreground hover:bg-gray-100 active:scale-[0.99]'
         } disabled:opacity-30 disabled:cursor-not-allowed`}
       >
         {added ? '✓ Added to Cart' : availableSizes.length === 0 ? 'Sold Out' : 'Add to Cart'}

@@ -4,6 +4,7 @@ import NavBar from '@/components/NavBar'
 import PrintSizeSelector from '@/components/PrintSizeSelector'
 import { getPreviewUrl } from '@/utils/cloudinary-helpers'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
@@ -49,10 +50,13 @@ export default async function ShopPhotoPage({ params }: { params: Promise<{ id: 
           {/* Left — image */}
           <div className="w-full lg:w-3/5 relative">
             <div className="aspect-[4/5] bg-surface-container overflow-hidden relative">
-              <img
+              <Image
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 60vw"
                 src={previewUrl}
                 alt={photo.alt_text || photo.title}
-                className="w-full h-full object-cover"
+                className="object-cover"
               />
               {photo.is_limited_edition && (
                 <div className="absolute top-6 left-6 bg-primary text-on-primary px-3 py-1 font-label text-[10px] uppercase tracking-widest">

@@ -129,6 +129,17 @@ export default function NewPhotoPage() {
           </select>
         </Field>
 
+        {/* Placement */}
+        <Field label="Website Placement" hint="Select where this photo runs. Assigning a showcase replaces the old photo automatically.">
+          <select name="placement" className="admin-input" defaultValue="gallery">
+            <option value="gallery">Gallery Only (Default)</option>
+            <option value="showcase_1">Showcase 1 (Large 8-col Rectangle)</option>
+            <option value="showcase_2">Showcase 2 (Vertical Pill Shape)</option>
+            <option value="showcase_3">Showcase 3 (Circular Frame)</option>
+            <option value="showcase_4">Showcase 4 (Wide 7-col Rectangle)</option>
+          </select>
+        </Field>
+
         {/* Limited Edition */}
         <div className="flex items-center gap-4">
           <input type="checkbox" name="is_limited_edition" id="isLimited" className="w-5 h-5 accent-[#bbcac6]" />
