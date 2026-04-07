@@ -2,20 +2,28 @@
 'use client';
 import { ReactLenis } from 'lenis/react';
 
+import { ChevronDown } from 'lucide-react';
+
 export default function StickyScrollGallery() {
   return (
     <ReactLenis root>
       <main className='bg-[#0e1510]'>
         <div className='wrapper'>
-          <section className='text-[#dde5dc] h-screen w-full bg-[#0e1510] grid place-content-center sticky top-0'>
-            <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
+          <section className='text-[#dde5dc] h-[40vh] min-h-[300px] w-full bg-[#0e1510] grid place-content-center sticky top-0 z-10'>
+            <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] z-0'></div>
 
-            <h1 className='2xl:text-7xl text-5xl px-8 font-semibold text-center tracking-tight leading-[120%]'>
-              Explore The Gallery
-              <br />
-              Curated Fine Art Prints <br />
-              Scroll down! 👇
-            </h1>
+            <div className='relative z-10 flex flex-col items-center justify-center 2xl:text-6xl text-4xl px-8 font-semibold text-center tracking-tight leading-[120%]'>
+              <span>
+                Explore The Gallery
+                <br />
+                Curated Fine Art Prints
+              </span>
+              
+              <div className="flex flex-col items-center gap-2 mt-12 opacity-60">
+                <span className="text-[10px] font-bold tracking-[0.3em] uppercase">Scroll Down</span>
+                <ChevronDown className="w-6 h-6 animate-bounce" />
+              </div>
+            </div>
           </section>
         </div>
 

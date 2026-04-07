@@ -3,6 +3,7 @@ import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import Image from 'next/image'
+import HeroSection from '@/components/HeroSection'
 
 export default async function Home() {
   const supabase = await createClient()
@@ -24,18 +25,8 @@ export default async function Home() {
       <NavBar />
       
       <main className="w-full pt-20">
-        {/* HERO: Typographic Echo Stack */}
-        <section className="relative w-full h-[70vh] md:h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-background">
-          <div className="relative flex justify-center items-center select-none pointer-events-none">
-            {/* Background layers */}
-            <span className="absolute font-display font-bold text-[18vw] md:text-[180px] leading-[0.9] tracking-[-0.05em] text-gray-100 z-10" style={{ transform: 'translate(-0.16em, -0.16em)' }}>GALLERY</span>
-            <span className="absolute font-display font-bold text-[18vw] md:text-[180px] leading-[0.9] tracking-[-0.05em] text-gray-200 z-20" style={{ transform: 'translate(-0.12em, -0.12em)' }}>GALLERY</span>
-            <span className="absolute font-display font-bold text-[18vw] md:text-[180px] leading-[0.9] tracking-[-0.05em] text-gray-300 z-30" style={{ transform: 'translate(-0.08em, -0.08em)' }}>GALLERY</span>
-            <span className="absolute font-display font-bold text-[18vw] md:text-[180px] leading-[0.9] tracking-[-0.05em] text-gray-400 z-40" style={{ transform: 'translate(-0.04em, -0.04em)' }}>GALLERY</span>
-            {/* Primary foreground layer */}
-            <span className="relative font-display font-bold text-[18vw] md:text-[180px] leading-[0.9] tracking-[-0.05em] text-foreground z-50">GALLERY</span>
-          </div>
-        </section>
+        {/* HERO */}
+        <HeroSection prints={[showcase1, showcase2, showcase3, showcase4]} />
 
         {/* PHILOSOPHY / NARRATIVE */}
         <section className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 py-24 md:py-32 flex flex-col items-center">
@@ -65,8 +56,9 @@ export default async function Home() {
         </section>
 
         {/* ASYMMETRICAL SHOWCASE GRID */}
-        <section className="w-full max-w-[1440px] mx-auto px-6 md:px-12 py-24 md:py-32">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 auto-rows-auto">
+        <section className="w-full bg-[#080808] py-24 md:py-32">
+          <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 auto-rows-auto">
             
             {/* 8-col rect */}
             <div className="md:col-span-8 group overflow-hidden bg-gray-200 rounded-sm relative aspect-[4/3] md:aspect-auto md:h-[600px]">
@@ -107,6 +99,7 @@ export default async function Home() {
               )}
             </div>
 
+          </div>
           </div>
         </section>
 

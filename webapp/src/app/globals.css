@@ -22,4 +22,9 @@
   .clip-inset-hidden {
     clip-path: inset(100% 0 0 0);
   }
+
+  /* Hide Unicorn Studio Watermark */
+  a[href*="unicorn.studio"] {
+    display: none !important;
+  }
 }
